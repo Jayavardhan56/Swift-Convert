@@ -83,6 +83,7 @@ async function processJob(jobId: string, files: File[], inputDir: string, output
     // Auto-cleanup: Delete job directory after 1 hour to save disk space
     setTimeout(async () => {
       try {
+        const jobDir = path.join(process.cwd(), 'temp', jobId);
         await fs.rm(jobDir, { recursive: true, force: true });
         delete jobs[jobId];
         console.log(`Cleaned up job: ${jobId}`);
