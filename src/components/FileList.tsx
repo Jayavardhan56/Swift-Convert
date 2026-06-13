@@ -3,12 +3,12 @@ import React from 'react';
 import { FileText, Download, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export interface FileItem {
-  id: string;
-  name: string;
-  status: 'pending' | 'converting' | 'completed' | 'error';
-  progress: number;
-  result?: { name: string; data: Uint8Array; type: string };
-  error?: string;
+  id:string;
+  name:string;
+  status:'pending' | 'converting' | 'completed' | 'error';
+  progress:number;
+  result?:{name: string; data: Uint8Array; type: string };
+  error?:string;
 }
 
 interface FileListProps {
